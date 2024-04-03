@@ -1,9 +1,40 @@
 <?php
+/****************************************************************************************************************
+ *          ЭТОТ ФАЙЛ СОДЕРЖИТ НАБОР ФУНКЦИЙ, ПРЕДНАЗНАЧЕННЫХ ДЛЯ УДОБНОЙ РАБОТЫ С БАЗОЙ ДАННЫХ MYSQL.          *
+ *      ФУНКЦИИ В ЭТОМ ФАЙЛЕ ПРЕДОСТАВЛЯЮТ УДОБНЫЙ ИНТЕРФЕЙС ДЛЯ ВЫПОЛНЕНИЯ ОСНОВНЫХ ОПЕРАЦИЙ БАЗЫ ДАННЫХ,      *
+ * ТАКИХ КАК ВЫПОЛНЕНИЕ ЗАПРОСОВ SELECT, INSERT, UPDATE И DELETE,А ТАКЖЕ УПРАВЛЕНИЕ ПОДКЛЮЧЕНИЕМ К БАЗЕ ДАННЫХ. *
+ *                                              ОПИСАНИЕ ФУНКЦИЙ:                                               *
+ *                               CONNECTTODATABASE() - ПОДКЛЮЧЕНИЕ К БАЗЕ ДАННЫХ                                *
+ *                                            LOGIN() - АВТОРИЗАЦИЯ                                             *
+ *                                 GETTABLEDATA() - ВЫВОД ВСЕХ ПОЛЕЙ ИЗ ТАБЛИЦЫ                                 *
+ *                                      GETTABLEDATAO() - ПОИСК ПО PREP_ID                                      *
+ *                                       GETTABLEDATAT() - ПОИСК ПО TYPE                                        *
+ *                                SEARCHDATABASE() - ПОИСК ПО ПОИСКОВОМУ ЗАПРОСУ                                *
+ *                                      SEARCHDATABASEBYID() - ПОИСК ПО ID                                      *
+ *                            ADDNEWELEMENT() - ДОБАВИТЬ НОВУЮ ЗАПИСЬ В ТАБЛИЦУ PREP                            *
+ *                                     SAVEIMAGE() - СОХРАНЕНИЕ ИЗОБРАЖЕНИЯ                                     *
+ *                                  SAVERECORDS() - ДОБАВЛЕНИЕ В ТАБЛИЦЕ KURS                                   *
+ *                               UPDATEPREP() - ОБНАВЛЕНИЕ ЗАПИСЕЙ В ТАБЛИЦЕ PREP                               *
+ *                            DELETEITEMSFROMKURS() - УДАЛИТЬ ЗАПИСЬ ИЗ ТАБЛИЦЕ KURS                            *
+ *                               UPDRECORDS() - ОБНАВЛЕНИЕ ЗАПИСЕЙ В ТАБЛИЦЕ KURS                               *
+ *                       GETALLIDSFROMKURSDATABASE() - ПОЛУЧЕНИЕ ВСЕХ ID ИЗ ТАБЛИЦЕ KURS                        *
+ *                             DELETERECORD() - УДАЛЕНИЕ ВСЕГО ЧТО СВЯЗАНО С PREPID                             *
+ *                         GETKURS_TYPE() - ПОЛУЧЕНИЕ ВСЕХ ЗАПИСЕЙ ИЗ ТАБЛИЦЕ KURS_TYPE                         *
+ ****************************************************************************************************************/
+
+
+/*******************************
+ *      УСПОКОЙТЕСЬ ДУХИ,      *
+ *    Я ДЕЛАЮ, ЧТО ДОЛЖЕН,     *
+ * ПРОСТИТЕ ВМЕШАТЕЛЬСТВО МОЁ, *
+ * И ДАРУЙТЕ МНЕ СВОЕ ДОВЕРИЕ. *
+ *******************************/
+
 function connectToDatabase() {
     clearstatcache();
     $servername = "172.16.238.10";
     $username = "root";
-    $password = ""; // Использование пустой строки для пароля
+    $password = "";
     $dbname = "mk";
 
     try {
@@ -86,6 +117,7 @@ function getTableDataO($tableName, $id) {
     }
 }
 
+//very ugly, but shit heapend
 function getTableDataT($tableName, $type) {
     $conn = connectToDatabase();
 
@@ -262,7 +294,7 @@ function saveRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endA
         $conn = null;
     }
 }
-
+//shit has heapend again
 
 function updatePrep($id, $name, $surname, $patronymic, $dob, $categorie) {
     $conn = connectToDatabase();
@@ -415,6 +447,7 @@ function deleteRecord($id) {
     $conn = null;
 }
 
+// почему ты не работаешь Т_Т
 function getKurs_type() {
     $conn = connectToDatabase();
 
@@ -438,54 +471,5 @@ function getKurs_type() {
     $conn = null;
 
     return $data;
-}
-
-function searchDb($search, $prep, $type, $date) {
-    $db = connectToDatabase();
-    $conditions = [];
-    $params = [];
-
-    if (!empty($search)) {
-        $conditions[] = "(name LIKE ? OR opis LIKE ?)";
-        $params[] = "%$search%";
-        $params[] = "%$search%";
-    }
-
-    if (!empty($prep)) {
-        $conditions[] = "prep_id = ?";
-        $params[] = $prep;
-    }
-
-    if (!empty($type)) {
-        $conditions[] = "type = ?";
-        $params[] = $type;
-    }
-
-    if (!empty($date)) {
-        $conditions[] = "date = ?";
-        $params[] = $date;
-    }
-
-    $query = "SELECT * FROM kurs";
-    if (!empty($conditions)) {
-        $query .= " WHERE " . implode(" AND ", $conditions);
-    }
-
-    $stmt = $db->prepare($query);
-    if (!empty($params)) {
-        foreach ($params as $key => $param) {
-            $stmt->bindValue($key + 1, $param);
-        }
-    }
-    
-    $stmt->execute();
-
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $rowCount = count($result);
-
-    $stmt->closeCursor();
-    $db = null;
-
-    return ['data' => $result, 'count' => $rowCount > 0 ? $rowCount : 0];
 }
 ?>
