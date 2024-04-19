@@ -3,7 +3,7 @@ function connectToDatabase() {
     clearstatcache();
     $servername = "172.16.238.10";
     $username = "root";
-    $password = ""; // Использование пустой строки для пароля
+    $password = "";
     $dbname = "mk";
 
     try {

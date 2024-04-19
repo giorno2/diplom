@@ -58,7 +58,9 @@
             <input type="hidden" name="pid" value="<?php echo($id); ?>">
             <input type="file" id="file" name="phto" accept="image/png, image/jpeg">
             <?php
-            echo'<div><img id="imagePreview" alt="добавить фото" src="im/' . $idj . '" style="max-width: 235px; max-height: 307px;"></div>';
+            echo'<div><img id="imagePreview" src="im/' . $idj . '" style="max-width: 235px; max-height: 307px;" onerror="hideBrokenImage(this)">
+            <p id="textt" style="display: none;">выберите фото</p>
+            </div>';
             ?>
             </label>
             <div class="tst">
@@ -94,6 +96,9 @@
     <script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');
+        const text = document.getElementById('textt');
+        let qwerty = 0;
+
         
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
@@ -102,11 +107,26 @@
 
                 reader.onload = function(e) {
                     imagePreview.src = e.target.result;
+                    qwerty = 1;
+                    hideBrokenImage(imagePreview);
                 };
 
                 reader.readAsDataURL(file);
             }
         });
+        function hideBrokenImage(element) {
+        if (qwerty === 0) {
+        element.style.display = 'none'; // Скрыть элемент изображения
+        text.style.display = 'inline';
+        console.log(qwerty);
+        }
+        else{
+        element.style.display = 'inline'; // Показать элемент изображения
+        text.style.display = 'none';
+        console.log(qwerty);
+        }
+    };
+
     </script>
     <script src="script.js"></script>
 <script>

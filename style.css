@@ -282,9 +282,6 @@ input[type=file]{
     width: 245px;
     height: 307px;
 }
-/* #imagePreview::after{
-} */
-
 #im{
     cursor: pointer;
     margin-left: 50px;

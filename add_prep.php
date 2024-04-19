@@ -12,6 +12,9 @@
     <title>добавление преподавателя</title>
 </head>
 <body>
+    <script type="text/javascript">
+
+    </script>
 <?php
         clearstatcache();
         include 'sql.php';
@@ -43,7 +46,9 @@
         <form action="save_prep.php" onsubmit="validateForm(event)" method="post" id="fr" enctype="multipart/form-data">
             <label id="im">
             <input type="file" id="file" name="phto" accept="image/png, image/jpeg">
-            <div><img id="imagePreview" alt="добавить фото" src="#" style="width: 235px; height: 307px;"></div>
+            <div><img id="imagePreview"  src="#" style="width: 235px; height: 307px;" onerror="hideBrokenImage(this)">
+                <p id="textt">выберите фото</p>
+            </div>
             </label>
             <div class="tst">
                 <label>фамилия</label> <input type="text" id="surname" name="surname" placeholder="фамилия"> </input>
@@ -75,7 +80,9 @@
     <script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');
-        
+        const text = document.getElementById('textt');
+        let qwerty = 0;
+
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
             if (file) {
@@ -83,11 +90,25 @@
 
                 reader.onload = function(e) {
                     imagePreview.src = e.target.result;
+                    qwerty = 1;
+                    hideBrokenImage(imagePreview);
                 };
 
                 reader.readAsDataURL(file);
             }
         });
+        function hideBrokenImage(element) {
+        if (qwerty === 0) {
+        element.style.display = 'none'; // Скрыть элемент изображения
+        text.style.display = 'inline';
+        console.log(qwerty);
+        }
+        else{
+        element.style.display = 'inline'; // Показать элемент изображения
+        text.style.display = 'none';
+        console.log(qwerty);
+        }
+    };
     </script>
 <script>
     let d3 =<?php echo json_encode($krs_t, JSON_HEX_TAG);?>;
