@@ -59,8 +59,9 @@
                 <input type="submit" value="сохранить" id="subm">
             </div>
             <div id="kr">
+            <p class="nzzn">Образование/курсы</p>
             <div id="tabhb">
-            <button type="button" class="tab-btn" onclick="openTab('tab1', this)">Обучение</button>
+            <button type="button" class="tab-btn" onclick="openTab('tab1',this)">Образование</button>
     <button type="button" class="tab-btn" id="tb2" onclick="openTab('tab2', this)">Курсы</button>
 </div>
 <input type="hidden" name="t" id="t">

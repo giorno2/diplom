@@ -1,4 +1,4 @@
-<?php 
+<?php
         session_start();
         if (isset($_SESSION["login"]) !== true){
             header("Location: index.php");
@@ -22,7 +22,7 @@
         usort($krs['data'], function($a, $b) {
             return $a['id'] - $b['id'];
         });
-        
+
         $krs_data = $krs['data'];
         $krs_count = $krs['count'];
         $krs1_data = $krs1['data'];
@@ -76,8 +76,9 @@
                 ?>
             </div>
             <div id="kr">
+            <p class="nzzn">Образование/курсы</p>
             <div id="tabhb">
-    <button type="button" class="tab-btn" onclick="openTab('tab1', this)">Обучение</button>
+    <button type="button" class="tab-btn" onclick="openTab('tab1', this)">Образование</button>
     <button type="button" class="tab-btn" id="tb2" onclick="openTab('tab2', this)">Курсы</button>
 </div>
     <input type="hidden" name="t" id="t">
@@ -99,7 +100,7 @@
         const text = document.getElementById('textt');
         let qwerty = 0;
 
-        
+
         fileInput.addEventListener('change', function() {
             const file = fileInput.files[0];
             if (file) {

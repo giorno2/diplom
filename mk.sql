@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Mar 30, 2024 at 05:10 PM
+-- Generation Time: May 03, 2024 at 02:35 PM
 -- Server version: 10.10.3-MariaDB-1:10.10.3+maria~ubu2204-log
 -- PHP Version: 8.2.1
 
@@ -40,13 +40,6 @@ CREATE TABLE `kurs` (
   `prep_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `kurs`
---
-
-INSERT INTO `kurs` (`id`, `name`, `uch_zav`, `date_start`, `date_end`, `type`, `spec`, `kvl`, `kl_c`, `prep_id`) VALUES
-(550, '1', '1', '1121-02-12', '2121-12-12', 1, '12', '1232', 1232, 21);
-
 -- --------------------------------------------------------
 
 --
@@ -80,13 +73,6 @@ CREATE TABLE `prep` (
   `DOB` date NOT NULL,
   `categorie` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `prep`
---
-
-INSERT INTO `prep` (`id`, `name`, `surname`, `patronymic`, `DOB`, `categorie`) VALUES
-(21, '1', '1', '1', '1111-11-11', '1');
 
 -- --------------------------------------------------------
 
@@ -159,7 +145,7 @@ ALTER TABLE `kurs_type`
 -- AUTO_INCREMENT for table `prep`
 --
 ALTER TABLE `prep`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `user`
