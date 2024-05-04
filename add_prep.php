@@ -55,7 +55,7 @@
                 <label>имя</label> <input type="text" id="name" name="name" placeholder="имя"> </input>
                 <label>отчество</label> <input type="text" id="patronymic" name="patronymic" placeholder="отчество"> </input>
                 <label>дата рождения</label> <input type="date" name="DOB" id="DOB">
-                <label>категория</label> <input type="text" name="categorie" id="categorie" placeholder="категории">
+                <label>категория</label> <input type="text" name="categorie" id="categorie" placeholder="категория">
                 <input type="submit" value="сохранить" id="subm">
             </div>
             <div id="kr">

@@ -419,7 +419,7 @@ function validateForm(event) {
     }
   }
 
-  // Проверка поля "opis[]"
+  // Проверка поля "uch_zav[]"
   var opis = document.getElementsByName("uch_zav[]");
   for (var i = 0; i < opis.length; i++) {
     if (opis[i].value === "") {
@@ -429,7 +429,7 @@ function validateForm(event) {
     }
   }
 
-  // Проверка поля "date[]"
+  // Проверка поля "date_start[]"
   var date_start = document.getElementsByName("date_start[]");
   for (var i = 0; i < date_start.length; i++) {
     if (date_start[i].value === "") {
@@ -438,6 +438,8 @@ function validateForm(event) {
       break;
     }
   }
+
+  // Проверка поля "date_end[]"
   var date_end = document.getElementsByName("date_end[]");
   for (var i = 0; i < date_end.length; i++) {
     if (date_end[i].value === "") {
@@ -447,38 +449,44 @@ function validateForm(event) {
     }
   }
 
-  var spec = document.getElementsByName("spec[]");
-  for (var i = 0; i < spec.length; i++) {
-    if (spec[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'специальность'.\n";
-      break;
-    }
-  }
+  // Проверка других полей
+  validateField("spec[]", "специальность");
+  validateField("kvl[]", "квалификация");
+  validateField("kl_c[]", "колличество часов");
 
-  var kvl = document.getElementsByName("kvl[]");
-  for (var i = 0; i < kvl.length; i++) {
-    if (kvl[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'квалификация'.\n";
-      break;
-    }
-  }
-
-  var kl_c = document.getElementsByName("kl_c[]");
-  for (var i = 0; i < kl_c.length; i++) {
-    if (kl_c[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'колличество часов'.\n";
-      break;
-    }
-  }
+  validateSingleField("surname", "фамилия");
+  validateSingleField("name", "имя");
+  validateSingleField("patronymic", "отчество");
+  validateSingleField("DOB", "дата рождения");
+  validateSingleField("categorie", "категория");
 
   if (!isValid) {
     alert(errorMessage);
     event.preventDefault(); // Отменить отправку формы
   }
+
+  function validateField(fieldName, fieldDisplayName) {
+    var field = document.getElementsByName(fieldName);
+    for (var i = 0; i < field.length; i++) {
+      if (field[i].value === "") {
+        isValid = false;
+        errorMessage += "Пожалуйста, заполните поле '" + fieldDisplayName + "'.\n";
+        break;
+      }
+    }
+  }
+
+  function validateSingleField(fieldId, fieldDisplayName) {
+    var field = document.getElementById(fieldId);
+    if (!field || field.value === "") {
+      isValid = false;
+      errorMessage += "Пожалуйста, заполните поле '" + fieldDisplayName + "'.\n";
+    }
+  }
 }
+
+
+
 
 function krs_ne() {
   let newElement = document.createElement('div');
