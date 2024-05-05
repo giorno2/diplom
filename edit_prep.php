@@ -5,11 +5,11 @@
         }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>редактирование данных преподавателя</title>
+    <title>Редактирование данных преподавателя</title>
 </head>
 <body>
     <?php
@@ -45,9 +45,12 @@
     <div class="header">
         <a href="main.php"><img src="pic/logo.png" alt="" width="122" height="61"></a>
         <form action="main_src.php" method="post" id="sr">
-            <input type="search" name="search" class="search" placeholder="поиск">
-            <input type="submit" value="поиск" class="src_btn">
+            <input type="search" name="search" class="search" placeholder="Поиск">
+            <input type="submit" value="Поиск" class="src_btn">
         </form>
+<div id="logout">
+        <?php echo("<p>" . "вы вошли как: " . $_SESSION["login"] . "</p>"); ?>
+        <a href="logout.php">выйти<img src="pic/right-from-bracket-solid.svg" width="17px" height="17px"></a></div>
     </div>
     <div class="content">
         <form onsubmit="validateForm(event)" action="ob_prep.php" method="post" id="fr" enctype="multipart/form-data">
@@ -67,12 +70,12 @@
                 <?php
                 $table = "prep";
                 $res = searchDatabaseById($id, $table);
-                echo'<label>фамилия: </label> <input type="text" id="surname" name="surname" value="'. $res["surname"] .'"> </input>';
-                echo'<label>имя: </label> <input type="text" id="name" name="name" value="'. $res["name"] .'"> </input>';
-                echo'<label>отчество: </label> <input type="text" id="patronymic" name="patronymic" value="'. $res["patronymic"] .'"> </input>';
-                echo'<label>дата рождения: </label> <input type="date" name="DOB" id="DOB" value="'. $res["DOB"] .'">';
-                echo'<label>категория: </label> <input type="text" name="categorie" id="categorie" value = "'. $res["categorie"] .'">';
-                echo'<input type="submit" value="сохранить" id="subm">';
+                echo'<label>Фамилия: </label> <input type="text" id="surname" name="surname" value="'. $res["surname"] .'"> </input>';
+                echo'<label>Имя: </label> <input type="text" id="name" name="name" value="'. $res["name"] .'"> </input>';
+                echo'<label>Отчество: </label> <input type="text" id="patronymic" name="patronymic" value="'. $res["patronymic"] .'"> </input>';
+                echo'<label>Дата рождения: </label> <input type="date" name="DOB" id="DOB" value="'. $res["DOB"] .'">';
+                echo'<label>Категория: </label> <input type="text" name="categorie" id="categorie" value = "'. $res["categorie"] .'">';
+                echo'<input type="submit" value="Сохранить" id="subm">';
                 ?>
             </div>
             <div id="kr">
@@ -93,6 +96,11 @@
     </button>
 </div>
         </form>
+    <footer style="position:initial">
+        <small>
+        © 2024 Сергеев Дмитрий Сергеевич.
+        </small>
+    </footer>
     </div>
     <script>
         const fileInput = document.getElementById('file');

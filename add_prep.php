@@ -1,4 +1,4 @@
-<?php 
+<?php
         session_start();
         if (isset($_SESSION["login"]) !== true){
             header("Location: index.php");
@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>добавление преподавателя</title>
+    <title>Добавление преподавателя</title>
 </head>
 <body>
     <script type="text/javascript">
@@ -38,25 +38,28 @@
     <div class="header">
     <a href="main.php"><img src="pic/logo.png" alt="" width="122" height="61"></a>
         <form action="main_src.php" method="post" id="sr">
-            <input type="search" name="search" class="search" placeholder="поиск">
-            <input type="submit" value="поиск" class="src_btn">
+            <input type="search" name="search" class="search" placeholder="Поиск">
+            <input type="submit" value="Поиск" class="src_btn">
         </form>
+    <div id="logout">
+        <?php echo("<p>" . "вы вошли как: " . $_SESSION["login"] . "</p>"); ?>
+        <a href="logout.php">выйти<img src="pic/right-from-bracket-solid.svg" width="17px" height="17px"></a></div>
     </div>
     <div class="content">
         <form action="save_prep.php" onsubmit="validateForm(event)" method="post" id="fr" enctype="multipart/form-data">
             <label id="im">
             <input type="file" id="file" name="phto" accept="image/png, image/jpeg">
             <div><img id="imagePreview"  src="#" style="width: 235px; height: 307px;" onerror="hideBrokenImage(this)">
-                <p id="textt">выберите фото</p>
+                <p id="textt">Выберите фото</p>
             </div>
             </label>
             <div class="tst">
-                <label>фамилия</label> <input type="text" id="surname" name="surname" placeholder="фамилия"> </input>
-                <label>имя</label> <input type="text" id="name" name="name" placeholder="имя"> </input>
-                <label>отчество</label> <input type="text" id="patronymic" name="patronymic" placeholder="отчество"> </input>
-                <label>дата рождения</label> <input type="date" name="DOB" id="DOB">
-                <label>категория</label> <input type="text" name="categorie" id="categorie" placeholder="категория">
-                <input type="submit" value="сохранить" id="subm">
+                <label>Фамилия</label> <input type="text" id="surname" name="surname" placeholder="Фамилия"> </input>
+                <label>Имя</label> <input type="text" id="name" name="name" placeholder="Имя"> </input>
+                <label>Отчество</label> <input type="text" id="patronymic" name="patronymic" placeholder="Отчество"> </input>
+                <label>Дата рождения</label> <input type="date" name="DOB" id="DOB">
+                <label>Категория</label> <input type="text" name="categorie" id="categorie" placeholder="Категория">
+                <input type="submit" value="Сохранить" id="subm">
             </div>
             <div id="kr">
             <p class="nzzn">Образование/курсы</p>
@@ -76,6 +79,11 @@
     </button>
 </div>
         </form>
+    <footer style="position:initial;">
+        <small>
+        © 2024 Сергеев Дмитрий Сергеевич.
+        </small>
+    </footer>
     </div>
     <script src="script.js"></script>
     <script>

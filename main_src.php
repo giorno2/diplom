@@ -1,4 +1,4 @@
-<?php 
+<?php
         session_start();
         if (isset($_SESSION["login"]) !== true){
             header("Location: index.php");
@@ -9,29 +9,28 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>главная</title>
+    <title>Главная</title>
 </head>
 <body>
 
     <div class="header">
     <a href="main.php"><img src="pic/logo.png" alt="" width="122" height="61"></a>
         <form action="main_src.php" method="post"  id="sr">
-            <?php 
+            <?php
             $pst = $_POST['search'];
             printf("<input type='search' name='search' class='search' placeholder='поиск' value= '$pst'>") ?>
-            <input type="submit" value="поиск" class="src_btn">
+            <input type="submit" value="Поиск" class="src_btn">
         </form>
-    </div>
-    <div class="sidebar" id="sidebar">
-        <button id="bs"><img src="pic/bars-solid.svg" alt="" width="46" height="38"></button>
-        <ul>
-            <li id="tb"><div id="ind"><a class="e" href="main.php">преподаватели</a> <a href="main.php"><img id="book" src="pic/book-solid.svg" alt="" width="46" height="38"></a></div></li>
-            <li id="tp"><div id="ind"><a class="e" href="main.php">курсы </a> <a href="main_krs.php"><img id="pen" src="pic/pen-solid.svg" alt="" width="46" height="38"></a></div></li>
-        </ul>
+        <div id="logout">
+        <?php echo("<p>" . "вы вошли как: " . $_SESSION["login"] . "</p>"); ?>
+        <a href="logout.php">выйти<img src="pic/right-from-bracket-solid.svg" width="17px" height="17px"></a></div>
+        <div id="vresps">
+        <h1 id="resps">Результаты поиска:</h1>
+        </div>
     </div>
     <div class="content">
-        <a href="add_prep.php"> <div class="prep_new"><img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px"></div></a>
-        <?php 
+        <a href="add_prep.php"> <div class="prep_new"><img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px"><p id="dobav">Добавить</p></div></a>
+        <?php
         clearstatcache();
         include 'sql.php';
         $search = $_POST['search'];
@@ -46,16 +45,27 @@
                 echo '<p>' . $row['name'] . '</p>';
                 echo '<p>' . $row['patronymic'] . '</p>';
                 echo '</div>';
-                echo '<div class="photo"><img src="im/' . $row['id'] . '.png"></div></a>';
+                echo '<div class="photo"><img src="im/' . $row['id'] . '.png" onerror="hideBrokenImage(this)"></div></a>';
                 echo '<a href="del_prep.php?id='. $row['id'] . '" class="d">';
                 echo '<div class="del_btn"><img src="pic/x-solid.svg" alt=""  width = "30px" height = "30px"></div>';
                 echo '</a>';
                 echo '</div>';
             }
         }
-        
-        ?> 
+
+        ?>
     </div>
+ <footer>
+ <small>
+ © 2024 Сергеев Дмитрий Сергеевич.
+ </small>
+ </footer>
+
     <script src="script.js"></script>
+    <script type="text/javascript">
+    function hideBrokenImage(element){
+        element.style.display = 'none';
+}
+    </script>
 </body>
 </html>

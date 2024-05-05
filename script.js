@@ -27,27 +27,27 @@ function fun(data) {
     let newElement = document.createElement('div');
     newElement.id = 'krs';
 
-    createInputElement('text', 'nazv[]', 'вид', obj.name, newElement);
+    createInputElement('text', 'nazv[]', 'Вид', obj.name, newElement);
 
     if (obj.uch_zav) {
-      createInputElement('text', 'uch_zav[]', 'учебное заведение', obj.uch_zav, newElement);
+      createInputElement('text', 'uch_zav[]', 'Учебное заведение', obj.uch_zav, newElement);
     }
 
     if (obj.date_start) {
-      createInputElement('date', 'date_start[]', 'дата начала', obj.date_start, newElement);
+      createInputElement('date', 'date_start[]', 'Дата начала', obj.date_start, newElement);
     }
 
     if (obj.date_end) {
-      createInputElement('date', 'date_end[]', 'дата конца', obj.date_end, newElement);
+      createInputElement('date', 'date_end[]', 'Дата конца', obj.date_end, newElement);
     }
     if (obj.spec) {
-      createInputElement('text', 'spec[]', 'спец', obj.spec, newElement);
+      createInputElement('text', 'spec[]', 'Спец', obj.spec, newElement);
     }
     if (obj.kvl) {
-      createInputElement('text', 'kvl[]', 'квалификация', obj.kvl, newElement);
+      createInputElement('text', 'kvl[]', 'Квалификация', obj.kvl, newElement);
     }
     if (obj.kl_c) {
-      createInputElement('text', 'kl_c[]', 'кол-во часов', obj.kl_c, newElement);
+      createInputElement('text', 'kl_c[]', 'Кол-во часов', obj.kl_c, newElement);
     }
 
     createInputElement('hidden', 'type[]', "", obj.type, newElement);
@@ -59,7 +59,7 @@ function fun(data) {
     newElement.appendChild(input4);
 
     let button = createButtonElement('pic/x-solid.svg', newElement);
-  
+
     if (obj.type == 1) {
       document.getElementById('tab1').appendChild(newElement);
     } else {
@@ -93,27 +93,27 @@ function fun0(data) {
     let newElement = document.createElement('div');
     newElement.id = 'krs';
 
-    createInputElement('text', 'nazv[]', 'вид', obj.name, newElement);
+    createInputElement('text', 'nazv[]', 'Вид', obj.name, newElement);
 
     if (obj.uch_zav) {
-      createInputElement('text', 'uch_zav[]', 'учебное завидение', obj.uch_zav, newElement);
+      createInputElement('text', 'uch_zav[]', 'Учебное завидение', obj.uch_zav, newElement);
     }
 
     if (obj.date_start) {
-      createInputElement('date', 'date_start[]', 'дата начала', obj.date_start, newElement);
+      createInputElement('date', 'date_start[]', 'Дата начала', obj.date_start, newElement);
     }
 
     if (obj.date_end) {
-      createInputElement('date', 'date_end[]', 'дата конца', obj.date_end, newElement);
+      createInputElement('date', 'date_end[]', 'Дата конца', obj.date_end, newElement);
     }
     if (obj.spec) {
-      createInputElement('text', 'spec[]', 'спец', obj.spec, newElement);
+      createInputElement('text', 'spec[]', 'Спец', obj.spec, newElement);
     }
     if (obj.kvl) {
-      createInputElement('text', 'kvl[]', 'квалификация', obj.kvl, newElement);
+      createInputElement('text', 'kvl[]', 'Квалификация', obj.kvl, newElement);
     }
     if (obj.kl_c) {
-      createInputElement('text', 'kl_c[]', 'кол-во часов', obj.kl_c, newElement);
+      createInputElement('text', 'kl_c[]', 'Кол-во часов', obj.kl_c, newElement);
     }
     createInputElement('hidden', 'type[]', "", obj.type, newElement);
 
@@ -124,7 +124,7 @@ function fun0(data) {
     newElement.appendChild(input4);
 
     let button = createButtonElement('pic/x-solid.svg', newElement);
-  
+
     if (obj.type == 1) {
       document.getElementById('tab1').appendChild(newElement);
     } else {
@@ -207,14 +207,14 @@ function createSelectElement(name, id, parentElement, data_2, data) {
 function krs_n() {
   let newElement = document.createElement('div');
   newElement.id = 'krs';
-  
-  createInputElement('text', 'nazv[]', 'вид', "" , newElement);
-  createInputElement('text', 'uch_zav[]', 'учебное заведение', "" , newElement);
-  createInputElement('date', 'date_start[]', 'дата начала', "" , newElement);
-  createInputElement('date', 'date_end[]', 'дата конца', "" , newElement);
-  createInputElement('text', 'spec[]', 'спец', "", newElement);
-  createInputElement('text', 'kvl[]', 'квалификация','', newElement);
-  createInputElement('text', 'kl_c[]', 'кол-во часов','', newElement);
+
+  createInputElement('text', 'nazv[]', 'Вид', "" , newElement);
+  createInputElement('text', 'uch_zav[]', 'Учебное заведение', "" , newElement);
+  createInputElement('date', 'date_start[]', 'Дата начала', "" , newElement);
+  createInputElement('date', 'date_end[]', 'Дата конца', "" , newElement);
+  createInputElement('text', 'spec[]', 'Спец', "", newElement);
+  createInputElement('text', 'kvl[]', 'Квалификация','', newElement);
+  createInputElement('text', 'kl_c[]', 'Кол-во часов','', newElement);
   createInputElement('hidden', 'th', "new" , 'new', newElement);
   createInputElement('hidden', 'type[]', "1" , '1', newElement);
 
@@ -239,11 +239,11 @@ function krs_n() {
 
   let krsNewElement = document.getElementById('krs_new');
   krsNewElement.parentNode.insertBefore(newElement, krsNewElement.nextSibling); // insert after krs_new
-  
+
   count++; // assuming count is a global variable
-  
+
   document.getElementById('t').value = count;
-  
+
   button.addEventListener('click', function() {
     let confirmDelete = confirm("Вы уверены, что хотите удалить этот элемент?");
     if (confirmDelete) {
@@ -318,7 +318,7 @@ function funq(dataArr, data_2, $l, data_3) {
           newElement.remove();
           count--;
           document.getElementById('t').value = count;
-  
+
           delIdsArr.push(data.id);
           document.getElementById('del_id').value = delIdsArr.join(",");
       }
@@ -332,7 +332,7 @@ function funq(dataArr, data_2, $l, data_3) {
 function oncl(data_2, $l, data_3) {
   let newElement = document.createElement('div');
   newElement.id = 'krs';
-  
+
   function createInput(type, name, placeholder,value) {
       let input = document.createElement('input');
       input.setAttribute('type', type);
@@ -409,54 +409,19 @@ function validateForm(event) {
   var isValid = true;
   var errorMessage = "";
 
-  // Проверка поля "nazv[]"
-  var nazv = document.getElementsByName("nazv[]");
-  for (var i = 0; i < nazv.length; i++) {
-    if (nazv[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'название'.\n";
-      break;
-    }
-  }
-
-  // Проверка поля "uch_zav[]"
-  var opis = document.getElementsByName("uch_zav[]");
-  for (var i = 0; i < opis.length; i++) {
-    if (opis[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'учебное завидение'.\n";
-      break;
-    }
-  }
-
-  // Проверка поля "date_start[]"
-  var date_start = document.getElementsByName("date_start[]");
-  for (var i = 0; i < date_start.length; i++) {
-    if (date_start[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'дата начала'.\n";
-      break;
-    }
-  }
-
-  // Проверка поля "date_end[]"
-  var date_end = document.getElementsByName("date_end[]");
-  for (var i = 0; i < date_end.length; i++) {
-    if (date_end[i].value === "") {
-      isValid = false;
-      errorMessage += "Пожалуйста, заполните поле 'дата конца'.\n";
-      break;
-    }
-  }
-
-  // Проверка других полей
+  // Проверка множественных полей
+  validateField("nazv[]", "название");
+  validateField("uch_zav[]", "учебное заведение");
+  validateField("date_start[]", "дата начала");
+  validateField("date_end[]", "дата конца");
   validateField("spec[]", "специальность");
   validateField("kvl[]", "квалификация");
-  validateField("kl_c[]", "колличество часов");
+  validateField("kl_c[]", "количество часов");
 
-  validateSingleField("surname", "фамилия");
-  validateSingleField("name", "имя");
-  validateSingleField("patronymic", "отчество");
+  // Проверка одиночных полей
+  validateSingleFieldLettersOnly("surname", "фамилия");
+  validateSingleFieldLettersOnly("name", "имя");
+  validateSingleFieldLettersOnly("patronymic", "отчество");
   validateSingleField("DOB", "дата рождения");
   validateSingleField("categorie", "категория");
 
@@ -483,6 +448,17 @@ function validateForm(event) {
       errorMessage += "Пожалуйста, заполните поле '" + fieldDisplayName + "'.\n";
     }
   }
+
+  function validateSingleFieldLettersOnly(fieldId, fieldDisplayName) {
+    var field = document.getElementById(fieldId);
+    if (!field || field.value === "") {
+      isValid = false;
+      errorMessage += "Пожалуйста, заполните поле '" + fieldDisplayName + "'.\n";
+    } else if (!/^[a-zA-Zа-яА-ЯёЁ]+$/.test(field.value)) {
+      isValid = false;
+      errorMessage += "Поле '" + fieldDisplayName + "' должно содержать только буквы.\n";
+    }
+  }
 }
 
 
@@ -491,14 +467,14 @@ function validateForm(event) {
 function krs_ne() {
   let newElement = document.createElement('div');
   newElement.id = 'krs';
-  
-  createInputElement('text', 'nazv[]', 'вид', "" , newElement);
-  createInputElement('text', 'uch_zav[]', 'учебное заведение', "" , newElement);
-  createInputElement('date', 'date_start[]', 'дата начала', "" , newElement);
-  createInputElement('date', 'date_end[]', 'дата конца', "" , newElement);
-  createInputElement('text', 'spec[]', 'спец', "", newElement);
-  createInputElement('text', 'kvl[]', 'квалификация','', newElement);
-  createInputElement('text', 'kl_c[]', 'кол-во часов','', newElement);
+
+  createInputElement('text', 'nazv[]', 'Вид', "" , newElement);
+  createInputElement('text', 'uch_zav[]', 'Учебное заведение', "" , newElement);
+  createInputElement('date', 'date_start[]', 'Дата начала', "" , newElement);
+  createInputElement('date', 'date_end[]', 'Дата конца', "" , newElement);
+  createInputElement('text', 'spec[]', 'Спец', "", newElement);
+  createInputElement('text', 'kvl[]', 'Квалификация','', newElement);
+  createInputElement('text', 'kl_c[]', 'Кол-во часов','', newElement);
   createInputElement('hidden', 'th', "new" , 'new', newElement);
   createInputElement('hidden', 'type[]', '2' , '2', newElement);
 
@@ -522,18 +498,18 @@ function krs_ne() {
   newElement.appendChild(button);
 
   let tab2Element = document.getElementById('tab2'); // Находим элемент по id tab2
-  
+
   // Проверяем, что элемент с id tab2 найден
   if (tab2Element) {
     let krsNewElement = tab2Element.querySelector('#krs_new'); // Находим элемент с id krs_new внутри tab2
-    
+
     // Проверяем, что элемент с id krs_new внутри tab2 найден
     if (krsNewElement) {
       krsNewElement.insertAdjacentElement('afterend', newElement); // Вставляем новый элемент после элемента с id krs_new внутри tab2
-      
+
       count++; // Предполагая, что count - это глобальная переменная
       document.getElementById('t').value = count;
-    
+
       button.addEventListener('click', function() {
         let confirmDelete = confirm("Вы уверены, что хотите удалить?");
         if (confirmDelete) {

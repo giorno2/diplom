@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if(isset($_SESSION["login"]) === true){
     header("Location: main.php");
@@ -9,13 +9,13 @@ if(isset($_SESSION["login"]) === true){
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>авторизация</title>
+    <title>Авторизация</title>
 </head>
 <body>
     <div class="main">
                 <img src="pic/logo.png" alt="" height="245px" width="500px">
                 <h1>Методический кабинет</h1>
-                <?php  
+                <?php
                     if(isset($_SESSION["error"]) === true){
                         echo "<p id='error' style='color:red'>" . $_SESSION['error'] . "</p>";
                         unset($_SESSION["error"]);
@@ -24,7 +24,7 @@ if(isset($_SESSION["login"]) === true){
         <div class="log">
             <form action="login.php" method="post">
                 <p>АВТОРИЗАЦИЯ</p>
-                <?php 
+                <?php
                     if (isset($_COOKIE['login'])){
                         echo"<input type= 'text' name='login' id='login' value= ". $_COOKIE['login'] . ">";
                     }
@@ -37,5 +37,10 @@ if(isset($_SESSION["login"]) === true){
             </form>
         </div>
     </div>
+    <footer>
+        <small>
+        © 2024 Сергеев Дмитрий Сергеевич.
+        </small>
+    </footer>
 </body>
 </html>

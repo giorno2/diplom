@@ -16,7 +16,7 @@ function connectToDatabase() {
         die();
     }
 }
-    
+
 function login($username, $password) {
     $conn = connectToDatabase();
     if (!$conn) {
@@ -46,7 +46,7 @@ function getTableData($tableName) {
     // Удалите вызов quote() для $tableName
 
     $sql = "SELECT * FROM $tableName";
-    
+
     try {
         $result = $conn->query($sql);
         if (!$result) {
@@ -114,7 +114,7 @@ function searchDatabase($searchQuery, $tableName) {
     $searchQuery = "%$searchQuery%"; // Добавляем символы для поиска по любой части строки
 
     $sql = "SELECT * FROM $tableName WHERE name LIKE :searchQuery OR surname LIKE :searchQuery OR patronymic LIKE :searchQuery";
-    
+
     try {
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':searchQuery', $searchQuery);
@@ -314,7 +314,7 @@ function UpdRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endAr
         $sql = "INSERT INTO kurs (id, name, uch_zav, date_start, date_end, spec, type, prep_id, kvl, kl_c)
                 VALUES (:id, :name, :uch_zav, :date_start, :date_end, :spec, :type, :prep_id, :kvl, :kl_c)
                 ON DUPLICATE KEY UPDATE
-                name=VALUES(name), uch_zav=VALUES(uch_zav), date_start=VALUES(date_start), date_end=VALUES(date_end), 
+                name=VALUES(name), uch_zav=VALUES(uch_zav), date_start=VALUES(date_start), date_end=VALUES(date_end),
                 spec=VALUES(spec), type=VALUES(type), prep_id=VALUES(prep_id), kvl=VALUES(kvl), kl_c=VALUES(kl_c)";
         $stmt = $conn->prepare($sql);
 
@@ -328,7 +328,7 @@ function UpdRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endAr
             $spec = $specArray[$i];
             $kvl = $kvlArray[$i];
             $kl_c = $kl_cArray[$i];
-            
+
             $stmt->bindParam(':id', $id);
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':uch_zav', $uch_zav);
@@ -405,9 +405,7 @@ function deleteRecord($id) {
             } else {
                 echo "Error deleting photo";
             }
-        } else {
-            echo "Photo does not exist";
-        }
+        } else {}
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -477,7 +475,7 @@ function searchDb($search, $prep, $type, $date) {
             $stmt->bindValue($key + 1, $param);
         }
     }
-    
+
     $stmt->execute();
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

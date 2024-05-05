@@ -43,6 +43,17 @@ a{
     align-self: center;
     margin-left: 20px;
 }
+#resps{
+    align-self: center;
+    margin-left 20px;
+    color:gray;
+}
+#vresps{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 .log{
     display: flex;
     flex-direction: row;
@@ -131,9 +142,6 @@ a{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
-#mc{
-    margin-top: 180px;
 }
 
 .prep_new{
@@ -338,7 +346,7 @@ input[type=file]{
     align-items: baseline;
     justify-content: center;
     width:1830px;
-    height: 382px;
+    height: 450px;
     border: 1px solid black;
     border-radius: 20px;
     margin-top:10px;
@@ -370,7 +378,7 @@ input[type=file]{
     width: 100%;
 }
 #krs input{
-    height: 20px;
+    height: 30px;
     width: 1800px;
 }
 #krs_m input{
@@ -522,7 +530,7 @@ label{
     align-items:center;
     justify-content:center;
     height: 60px;
-    width: 90%;
+    width: 82%;
     margin-top:-6px;
 }
 .tab {
@@ -575,4 +583,36 @@ label{
 .nzzn{
     border-bottom: 1px solid #909090;
     color:#909090;
+}
+#dobav{
+    font-weight:bold;
+    font-size:25px;
+}
+
+footer {
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    text-align: center;
+    color: #000;
+}
+#logout{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    flex-direction:column;
+}
+#logout p{
+    margin-bottom:-3px;
+    margin-top:-3px;
+}
+#logout a{
+    font-size:17px;
+    vertical-align:center;
+    color:#e01b24;
+}
+#logout img{
+    margin-left:3px;
+    margin-bottom:-3px;
 }
