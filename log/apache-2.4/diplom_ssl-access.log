@@ -1,5 +1,0 @@
-172.16.238.1 - - [01/Jun/2024:11:20:59 +0000] "GET / HTTP/2.0" 200 887 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0"
-172.16.238.1 - - [01/Jun/2024:11:20:59 +0000] "GET /style.css HTTP/2.0" 200 11671 "https://diplom.dvl.to/" "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0"
-172.16.238.1 - - [01/Jun/2024:11:20:59 +0000] "GET /pic/logo.png HTTP/2.0" 200 114682 "https://diplom.dvl.to/" "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0"
-172.16.238.1 - - [01/Jun/2024:11:20:59 +0000] "GET /fonts/avenirnextcyr-demi.woff2 HTTP/2.0" 200 28264 "https://diplom.dvl.to/style.css" "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0"
-172.16.238.1 - - [01/Jun/2024:11:20:59 +0000] "GET /favicon.ico HTTP/2.0" 200 132062 "https://diplom.dvl.to/" "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0"
