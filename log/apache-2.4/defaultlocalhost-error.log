@@ -1,0 +1,9 @@
+[Tue Jun 11 09:42:49.024555 2024] [authz_core:error] [pid 805:tid 137270413994808] [client 172.16.238.1:33782] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:42:49.254602 2024] [authz_core:error] [pid 805:tid 137270413851448] [client 172.16.238.1:33782] AH01630: client denied by server configuration: /var/www/default/htdocs, referer: http://localhost/
+[Tue Jun 11 09:48:30.437481 2024] [authz_core:error] [pid 766:tid 132566627248952] [client 172.16.238.1:45128] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:48:31.405963 2024] [authz_core:error] [pid 766:tid 132566627105592] [client 172.16.238.1:45128] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:48:31.552357 2024] [authz_core:error] [pid 766:tid 132566626962232] [client 172.16.238.1:45128] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:48:31.718068 2024] [authz_core:error] [pid 766:tid 132566626818872] [client 172.16.238.1:45128] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:51:30.698907 2024] [authz_core:error] [pid 766:tid 139667004435256] [client 172.16.238.1:59942] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:51:31.388041 2024] [authz_core:error] [pid 766:tid 139667004291896] [client 172.16.238.1:59942] AH01630: client denied by server configuration: /var/www/default/htdocs
+[Tue Jun 11 09:51:31.570450 2024] [authz_core:error] [pid 766:tid 139667004148536] [client 172.16.238.1:59942] AH01630: client denied by server configuration: /var/www/default/htdocs
