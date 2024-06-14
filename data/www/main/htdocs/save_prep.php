@@ -17,7 +17,7 @@ $kl_c = isset($_POST['kl_c']) ? $_POST['kl_c'] : null;
 $spec = isset($_POST['spec']) ? $_POST['spec'] : null;
 
 $newElementId = addNewElement($name, $surname, $patronymic, $DOB, $categorie);
-
+echo($newElementId);
 if($phto != null){
     $str = strval($newElementId);
     $n = $str . ".png";
@@ -25,6 +25,6 @@ if($phto != null){
 }
 
 saveRecords($times,$nazv, $uch_zav, $date_start, $date_end, $type, $newElementId, $spec, $kvl, $kl_c,);
-header("Location: main.php");
+header("Location: view.php?id=" .$newElementId);
 exit();
 ?>

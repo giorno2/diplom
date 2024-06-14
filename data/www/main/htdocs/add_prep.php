@@ -45,7 +45,7 @@
         <?php echo("<p>" . "вы вошли как: " . $_SESSION["login"] . "</p>"); ?>
         <a href="logout.php">выйти<img src="pic/right-from-bracket-solid.svg" width="17px" height="17px"></a></div>
     </div>
-    <div class="content">
+    <div class="content-c">
         <form action="save_prep.php" onsubmit="validateForm(event)" method="post" id="fr" enctype="multipart/form-data">
             <label id="im">
             <input type="file" id="file" name="phto" accept="image/png, image/jpeg">
@@ -78,12 +78,12 @@
         <img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px">
     </button>
 </div>
-        </form>
-    <footer style="position:initial;">
+<footer style="position:initial">
         <small>
         © 2024 Сергеев Дмитрий Сергеевич.
         </small>
     </footer>
+        </form>
     </div>
     <script src="script.js"></script>
     <script>

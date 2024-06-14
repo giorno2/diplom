@@ -252,7 +252,6 @@ function saveRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endA
 
         $conn->commit();
 
-        header("Location: main.php");
         exit();
     } catch (PDOException $e) {
         $conn->rollBack();

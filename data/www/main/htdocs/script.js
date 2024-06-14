@@ -18,7 +18,54 @@ function openTab(tabName, btn) {
 let count = 0;
 let delIdsArr = [];
 
+function fun_ro(data) {
+  let objects = JSON.parse(data);
 
+  objects.forEach(obj => {
+    let newElement = document.createElement('div');
+    newElement.id = 'krs';
+
+    createReadonlyInputElement('text', 'nazv[]', 'Вид', obj.name, newElement);
+
+    if (obj.uch_zav) {
+      createReadonlyInputElement('text', 'uch_zav[]', 'Учебное заведение', obj.uch_zav, newElement);
+    }
+
+    if (obj.date_start) {
+      createReadonlyInputElement('date', 'date_start[]', 'Дата начала', obj.date_start, newElement);
+    }
+
+    if (obj.date_end) {
+      createReadonlyInputElement('date', 'date_end[]', 'Дата конца', obj.date_end, newElement);
+    }
+    if (obj.spec) {
+      createReadonlyInputElement('text', 'spec[]', 'Спец', obj.spec, newElement);
+    }
+    if (obj.kvl) {
+      createReadonlyInputElement('text', 'kvl[]', 'Квалификация', obj.kvl, newElement);
+    }
+    if (obj.kl_c) {
+      createReadonlyInputElement('text', 'kl_c[]', 'Кол-во часов', obj.kl_c, newElement);
+    }
+
+    createReadonlyInputElement('hidden', 'type[]', "", obj.type, newElement);
+
+    let input4 = document.createElement('input');
+    input4.setAttribute('type', 'hidden');
+    input4.setAttribute('name', 'kurs_id[]');
+    input4.setAttribute('value', obj.id);
+    newElement.appendChild(input4);
+
+    if (obj.type == 1) {
+      document.getElementById('tab1').appendChild(newElement);
+    } else {
+      document.getElementById('tab2').appendChild(newElement);
+    }
+
+    count++;
+    document.getElementById('t').value = count;
+  });
+}
 
 function fun(data) {
   let objects = JSON.parse(data);
@@ -156,6 +203,27 @@ function createInputElement(type, name, placeholder, value, parentElement) {
   }
 
   let input = document.createElement('input');
+  input.setAttribute('type', type);
+  input.setAttribute('name', name);
+  input.setAttribute('placeholder', placeholder);
+  input.value = value;
+
+  if (type !== 'hidden') {
+      parentElement.appendChild(input);
+  } else {
+      parentElement.appendChild(input); // Добавление поля типа hidden без label
+  }
+}
+
+function createReadonlyInputElement(type, name, placeholder, value, parentElement) {
+  if (type !== 'hidden') {
+      let labelElement = document.createElement('label');
+      labelElement.innerText = placeholder + ': ';
+      parentElement.appendChild(labelElement);
+  }
+
+  let input = document.createElement('input');
+  input.readOnly = true
   input.setAttribute('type', type);
   input.setAttribute('name', name);
   input.setAttribute('placeholder', placeholder);

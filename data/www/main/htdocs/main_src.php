@@ -40,7 +40,7 @@
         if ($data !== null){
             foreach($data as $row) {
                 echo '<div class="prep">';
-                echo '<a href="edit_prep.php?id='. $row['id'] . '" id="wq"> <div class="name">';
+                echo '<a href="view.php?id='. $row['id'] . '" id="wq"> <div class="name">';
                 echo '<p>' . $row['surname'] . '</p>';
                 echo '<p>' . $row['name'] . '</p>';
                 echo '<p>' . $row['patronymic'] . '</p>';
@@ -54,13 +54,12 @@
         }
 
         ?>
+    <footer style="position:initial">
+        <small>
+        © 2024 Сергеев Дмитрий Сергеевич.
+        </small>
+    </footer>
     </div>
- <footer>
- <small>
- © 2024 Сергеев Дмитрий Сергеевич.
- </small>
- </footer>
-
     <script src="script.js"></script>
     <script type="text/javascript">
     function hideBrokenImage(element){

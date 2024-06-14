@@ -34,9 +34,9 @@ isset($kl_c) === true){
     $krs_id = getAllIdsFromKursDatabase();
     
     UpdRecords($times,$nazv,$uch_zav,$date_start,$date_end ,$type,$id,$krs_id,$spec,$kvl,$kl_c);
-    header("Location: main.php");
+    header("Location: view.php?id=".$id);
 }
 else{
-    header("Location: main.php");
+    header("Location: view.php?id=".$id);
 };
 ?>

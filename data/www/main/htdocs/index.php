@@ -36,11 +36,11 @@ if(isset($_SESSION["login"]) === true){
                 <input type="submit" value="ВОЙТИ">
             </form>
         </div>
-    </div>
-    <footer>
+        <footer>
         <small>
         © 2024 Сергеев Дмитрий Сергеевич.
         </small>
     </footer>
+    </div>
 </body>
 </html>

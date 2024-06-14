@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Редактирование данных преподавателя</title>
+    <title>просмотр данных преподавателя</title>
 </head>
 
 <body>
@@ -72,12 +72,12 @@
                 <?php
                 $table = "prep";
                 $res = searchDatabaseById($id, $table);
-                echo'<label>Фамилия: </label> <input type="text" id="surname" name="surname" value="'. $res["surname"] .'"> </input>';
-                echo'<label>Имя: </label> <input type="text" id="name" name="name" value="'. $res["name"] .'"> </input>';
-                echo'<label>Отчество: </label> <input type="text" id="patronymic" name="patronymic" value="'. $res["patronymic"] .'"> </input>';
-                echo'<label>Дата рождения: </label> <input type="date" name="DOB" id="DOB" value="'. $res["DOB"] .'">';
-                echo'<label>Категория: </label> <input type="text" name="categorie" id="categorie" value = "'. $res["categorie"] .'">';
-                echo'<input type="submit" value="Сохранить" id="subm">';
+                echo'<label>Фамилия: </label> <input readonly type="text" id="surname" name="surname" value="'. $res["surname"] .'"> </input>';
+                echo'<label>Имя: </label> <input readonly type="text" id="name" name="name" value="'. $res["name"] .'"> </input>';
+                echo'<label>Отчество: </label> <input readonly type="text" id="patronymic" name="patronymic" value="'. $res["patronymic"] .'"> </input>';
+                echo'<label>Дата рождения: </label> <input readonly type="date" name="DOB" id="DOB" value="'. $res["DOB"] .'">';
+                echo'<label>Категория: </label> <input readonly type="text" name="categorie" id="categorie" value = "'. $res["categorie"] .'">';
+                echo '<a id = "edit" href="edit_prep.php?id=' .$id. '"> редактировать</a>';
                 ?>
             </div>
             <div id="kr">
@@ -88,22 +88,17 @@
                 </div>
                 <input type="hidden" name="t" id="t">
                 <div id="tab1" class="tab">
-                    <button type="button" id="krs_new" onclick="krs_n()">
-                        <img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px">
-                    </button>
+
                 </div>
                 <div id="tab2" class="tab">
-                    <button type="button" id="krs_new" onclick="krs_ne()">
-                        <img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px">
-                    </button>
+
                 </div>
+                <footer style="position:initial">
+            <small>
+                © 2024 Сергеев Дмитрий Сергеевич.
+            </small>
+        </footer>
         </form>
-        <footer style="position:initial">
-        <small>
-            © 2024 Сергеев Дмитрий Сергеевич.
-        </small>
-    </footer>
-        </div>
     </div>
     <script>
         const fileInput = document.getElementById('file');
@@ -144,7 +139,7 @@
         let d3 = < ? php echo json_encode($krs_t, JSON_HEX_TAG); ? > ;
         let d = < ? php echo json_encode($data) ? > ;
         let d1 = < ? php echo json_encode($dataO) ? > ;
-        fun(d);
+        fun_ro(d);
     </script>
 </body>
 
