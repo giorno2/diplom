@@ -484,7 +484,7 @@ function validateForm(event) {
   validateField("date_end[]", "дата конца");
   validateField("spec[]", "специальность");
   validateField("kvl[]", "квалификация");
-  validateField("kl_c[]", "количество часов");
+  validateFieldint("kl_c[]", "количество часов");
 
   // Проверка одиночных полей
   validateSingleFieldLettersOnly("surname", "фамилия");
@@ -508,7 +508,20 @@ function validateForm(event) {
       }
     }
   }
-
+  function validateFieldint(fieldName, fieldDisplayName) {
+    var field = document.getElementsByName(fieldName);
+    for (var i = 0; i < field.length; i++) {
+      if (field[i].value === "") {
+        isValid = false;
+        errorMessage += "Пожалуйста, заполните поле '" + fieldDisplayName + "'.\n";
+        break;
+      }
+      else if(isNaN(Number(field[i].value)) === true){
+        errorMessage += "Поле '" + fieldDisplayName + "' должно содержать только цифры.\n";
+        break;
+      }
+    }
+  }
   function validateSingleField(fieldId, fieldDisplayName) {
     var field = document.getElementById(fieldId);
     if (!field || field.value === "") {
