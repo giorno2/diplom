@@ -5866,30 +5866,3 @@ Stack trace:
 [16-Jun-2024 05:29:27 UTC] PHP Deprecated:  Creation of dynamic property WP_CLI\Dispatcher\Subcommand::$longdesc is deprecated in phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CompositeCommand.php on line 38
 [16-Jun-2024 05:29:27 UTC] PHP Deprecated:  Creation of dynamic property WP_CLI\Dispatcher\Subcommand::$longdesc is deprecated in phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CompositeCommand.php on line 38
 [16-Jun-2024 05:29:27 UTC] PHP Deprecated:  Creation of dynamic property WP_CLI\Dispatcher\Subcommand::$longdesc is deprecated in phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CompositeCommand.php on line 38
-[16-Jun-2024 11:54:45] NOTICE: fpm is running, pid 1489
-[16-Jun-2024 11:54:45] NOTICE: ready to handle connections
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Pimple\Container::offsetExists($id) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/vendor/pimple/pimple/src/Pimple/Container.php on line 133
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Pimple\Container::offsetGet($id) should either be compatible with ArrayAccess::offsetGet(mixed $offset): mixed, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/vendor/pimple/pimple/src/Pimple/Container.php on line 98
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Pimple\Container::offsetSet($id, $value) should either be compatible with ArrayAccess::offsetSet(mixed $offset, mixed $value): void, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/vendor/pimple/pimple/src/Pimple/Container.php on line 79
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Pimple\Container::offsetUnset($id) should either be compatible with ArrayAccess::offsetUnset(mixed $offset): void, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/vendor/pimple/pimple/src/Pimple/Container.php on line 143
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Deployer\Collection\Collection::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/src/Collection/Collection.php on line 58
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Deployer\Collection\Collection::offsetGet($offset) should either be compatible with ArrayAccess::offsetGet(mixed $offset): mixed, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/src/Collection/Collection.php on line 74
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Deployer\Collection\Collection::offsetSet($offset, $value) should either be compatible with ArrayAccess::offsetSet(mixed $offset, mixed $value): void, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/src/Collection/Collection.php on line 82
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Deployer\Collection\Collection::offsetUnset($offset) should either be compatible with ArrayAccess::offsetUnset(mixed $offset): void, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/src/Collection/Collection.php on line 90
-[16-Jun-2024 11:55:12 UTC] PHP Deprecated:  Return type of Symfony\Component\Console\Helper\HelperSet::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in phar:///usr/local/bin/dep/vendor/symfony/console/Helper/HelperSet.php on line 94
-[16-Jun-2024 12:11:24] NOTICE: Terminating ...
-[16-Jun-2024 12:11:24] NOTICE: exiting, bye-bye!
-[16-Jun-2024 12:15:53] NOTICE: fpm is running, pid 1486
-[16-Jun-2024 12:15:53] NOTICE: ready to handle connections
-[16-Jun-2024 12:16:12 UTC] PHP Warning:  Undefined array key "login" in /shared/httpd/main/htdocs/main.php on line 7
-[16-Jun-2024 12:16:12 UTC] PHP Deprecated:  setcookie(): Passing null to parameter #2 ($value) of type string is deprecated in /shared/httpd/main/htdocs/main.php on line 7
-[16-Jun-2024 12:16:12 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /shared/httpd/main/htdocs/main.php:7) in /shared/httpd/main/htdocs/main.php on line 7
-[16-Jun-2024 12:16:12 UTC] PHP Warning:  Undefined array key "login" in /shared/httpd/main/htdocs/main.php on line 32
-[16-Jun-2024 13:07:27] NOTICE: fpm is running, pid 1198
-[16-Jun-2024 13:07:27] NOTICE: ready to handle connections
-[16-Jun-2024 13:12:46] NOTICE: Terminating ...
-[16-Jun-2024 13:12:46] NOTICE: exiting, bye-bye!
-[16-Jun-2024 13:16:31] NOTICE: fpm is running, pid 1198
-[16-Jun-2024 13:16:31] NOTICE: ready to handle connections
-[16-Jun-2024 13:17:06] NOTICE: Terminating ...
-[16-Jun-2024 13:17:06] NOTICE: exiting, bye-bye!

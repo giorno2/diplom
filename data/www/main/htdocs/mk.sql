@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: May 03, 2024 at 02:35 PM
--- Server version: 10.10.3-MariaDB-1:10.10.3+maria~ubu2204-log
+-- Generation Time: Jun 16, 2024 at 05:32 AM
+-- Server version: 10.10.3-MariaDB-1:10.10.3+maria~ubu2204
 -- PHP Version: 8.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -56,7 +56,7 @@ CREATE TABLE `kurs_type` (
 --
 
 INSERT INTO `kurs_type` (`id`, `name`) VALUES
-(1, 'Учения'),
+(1, 'Образование'),
 (2, 'Курсы');
 
 -- --------------------------------------------------------
@@ -133,7 +133,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `kurs`
 --
 ALTER TABLE `kurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=551;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kurs_type`
@@ -145,7 +145,7 @@ ALTER TABLE `kurs_type`
 -- AUTO_INCREMENT for table `prep`
 --
 ALTER TABLE `prep`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
