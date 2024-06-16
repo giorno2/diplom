@@ -4551,5 +4551,3 @@
 172.16.238.1 - - [16/Jun/2024:05:27:49 +0000] "GET /im/219.png HTTP/2.0" 404 196 "https://main.dvl.to/main.php" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 172.16.238.1 - - [16/Jun/2024:05:27:49 +0000] "GET /im/229.png HTTP/2.0" 404 196 "https://main.dvl.to/main.php" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 172.16.238.1 - - [16/Jun/2024:05:27:49 +0000] "GET /im/231.png HTTP/2.0" 304 - "https://main.dvl.to/main.php" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
-172.16.238.1 - - [16/Jun/2024:05:30:16 +0000] "GET /view.php?id=89 HTTP/2.0" 200 4687 "https://main.dvl.to/main.php" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
-172.16.238.1 - - [16/Jun/2024:05:30:16 +0000] "GET /style.css HTTP/2.0" 304 - "https://main.dvl.to/view.php?id=89" "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"

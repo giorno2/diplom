@@ -215,7 +215,7 @@ function saveImage($sourceFile, $fileName) {
 }
 
 
-function saveRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endArray, $typeArray, $prep_id, $spec_Array, $kvlArray, $kl_cArray,) {
+function saveRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endArray, $typeArray, $prep_id, $spec_Array, $kvlArray, $kl_cArray) {
     $conn = connectToDatabase();
     if (!$conn) {
         die("Failed to connect to database");
@@ -251,16 +251,17 @@ function saveRecords($n, $nameArray, $uch_zavArray, $date_startArray, $date_endA
         }
 
         $conn->commit();
-
-        exit();
     } catch (PDOException $e) {
         $conn->rollBack();
         // Log or handle the error appropriately
-        echo "Error: " . $e->getMessage();
+        error_log("Error: " . $e->getMessage());
+        return false;
     } finally {
         $conn = null;
     }
+    return true;
 }
+
 
 
 function updatePrep($id, $name, $surname, $patronymic, $dob, $categorie) {
@@ -485,4 +486,3 @@ function searchDb($search, $prep, $type, $date) {
 
     return ['data' => $result, 'count' => $rowCount > 0 ? $rowCount : 0];
 }
-?>
