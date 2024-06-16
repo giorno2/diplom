@@ -97,14 +97,14 @@
                         <img id="plus" src="pic/plus-solid.svg" alt="" width="96.57px" height="96.57px">
                     </button>
                 </div>
-        </form>
-        </div>
-    </div>
-    <footer id="eve" style="position:absolute">
+                </form>
+        <footer style="position:initial">
         <small>
             © 2024 Сергеев Дмитрий Сергеевич.
         </small>
     </footer>
+        </div>
+    </div>
     <script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');

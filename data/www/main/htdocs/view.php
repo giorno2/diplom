@@ -90,16 +90,18 @@
                 </div>
                 <div id="tab2" class="tab">
 
-                </div>
-        </form>
+</div>
+<footer style="position:initial">
 
-    </div>
-        <footer id="ev" style="position:absolute">
-            <small>
-                © 2024 Сергеев Дмитрий Сергеевич.
-            </small>
-        </footer>
-    <script>
+
+
+<small>
+© 2024 Сергеев Дмитрий Сергеевич.
+</small>
+</footer>
+</form>
+</div>
+<script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');
         const text = document.getElementById('textt');
