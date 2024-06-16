@@ -98,13 +98,13 @@
                     </button>
                 </div>
         </form>
-        <footer style="position:initial">
+        </div>
+    </div>
+    <footer id="eve" style="position:absolute">
         <small>
             © 2024 Сергеев Дмитрий Сергеевич.
         </small>
     </footer>
-        </div>
-    </div>
     <script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');

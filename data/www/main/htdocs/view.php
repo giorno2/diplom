@@ -61,10 +61,8 @@
             <label id="im">
                 <input type="hidden" name="del_id" id="del_id">
                 <input type="hidden" name="pid" value="<?php echo($id); ?>">
-                <input type="file" id="file" name="phto" accept="image/png, image/jpeg">
                 <?php
             echo'<div><img id="imagePreview" src="im/' . $idj . '" style="max-width: 235px; max-height: 307px;" onerror="hideBrokenImage(this)">
-            <p id="textt" style="display: none;">выберите фото</p>
             </div>';
             ?>
             </label>
@@ -93,13 +91,14 @@
                 <div id="tab2" class="tab">
 
                 </div>
-                <footer style="position:initial">
+        </form>
+
+    </div>
+        <footer id="ev" style="position:absolute">
             <small>
                 © 2024 Сергеев Дмитрий Сергеевич.
             </small>
         </footer>
-        </form>
-    </div>
     <script>
         const fileInput = document.getElementById('file');
         const imagePreview = document.getElementById('imagePreview');
