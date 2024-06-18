@@ -606,7 +606,6 @@ label {
     height: 60px;
     width: 80vw;
     margin-top: -6px;
-    margin-right: 2vw;
 }
 
 .tab {
@@ -671,6 +670,8 @@ label {
 }
 
 #logout {
+    position: absolute;
+    right: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
