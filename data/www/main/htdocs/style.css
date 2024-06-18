@@ -29,7 +29,6 @@
         url('fonts/avenirnextcyr-regular.svg#avenirnextcyr-regular') format('svg');
     /* Chrome < 4, Legacy iOS */
 }
-
 html {
     font-family: 'AvenirNextCyr-Demi';
     height: 100%;
@@ -207,7 +206,7 @@ a {
 .search {
     border: 1px solid #9f9f9f;
     margin-left: 60px;
-    width: 86.5%;
+    width: 90%;
     height: 33px;
     border-radius: 20px 0px 0px 20px;
     text-indent: 10px;
@@ -217,7 +216,7 @@ a {
 
 .src_btn {
     border: 1px solid darkblue;
-    width: 5%;
+    width: 72px;
     height: 33px;
     border-radius: 0px 20px 20px 0px;
     background-color: blue;
@@ -605,8 +604,9 @@ label {
     align-items: center;
     justify-content: center;
     height: 60px;
-    width: 75vw;
+    width: 80vw;
     margin-top: -6px;
+    margin-right: 2vw;
 }
 
 .tab {
@@ -731,4 +731,15 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1492px) {
+    #sr {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60vw;
+        margin-top: -6px;
+    }
 }
