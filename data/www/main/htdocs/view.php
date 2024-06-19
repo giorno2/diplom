@@ -137,9 +137,9 @@
     </script>
     <script src="script.js"></script>
     <script>
-        let d3 = < ? php echo json_encode($krs_t, JSON_HEX_TAG); ? > ;
-        let d = < ? php echo json_encode($data) ? > ;
-        let d1 = < ? php echo json_encode($dataO) ? > ;
+        let d3 = <?php echo json_encode($krs_t, JSON_HEX_TAG); ?>;
+        let d = <?php echo json_encode($data) ?>;
+        let d1 = <?php echo json_encode($dataO) ?>;
         fun_ro(d);
     </script>
 </body>
